@@ -1,2 +1,7 @@
-h1 Lists#index
-p Find me in app/views/lists/index.html.slim
+h1 投稿一覧
+
+- @lists.each do |list|
+  p タイトル
+  span
+    = link_to list.title, "/lists/#{list.id}"
+
