@@ -4,4 +4,9 @@ h1 投稿一覧
   p タイトル
   span
     = link_to list.title, "/lists/#{list.id}"
+  p 画像
+  - if list.image.attached? 
+    = image_tag list.image, size: "200x200"
+  - else
+   = image_tag 'no_image', size: "200x200"
 

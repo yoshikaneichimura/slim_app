@@ -4,4 +4,6 @@ h1 新規投稿
   = f.text_field :title
   h4 本文
   = f.text_area :body
+  h4 画像
+  = f.file_field :image, accept: "image/*"
   = f.submit '投稿'
