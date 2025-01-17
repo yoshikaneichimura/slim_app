@@ -8,11 +8,17 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"
   body
-    h1 slim
-    = link_to "top", root_path
-    br
-    = link_to "new", new_list_path
-    br
-    = link_to "index", lists_path
-    = yield
+    header
+      h1.headline All List
+    nav
+      ul.nav-list
+        li.nav-list-item
+          = link_to "Top", root_path
+        li.nav-list-item
+          = link_to "Lists",  lists_path
+        li.nav-list-item
+          = link_to "New List", new_list_path
+    main
+      = yield

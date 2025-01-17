@@ -1,9 +1,12 @@
-h1 投稿一覧
-
-- @lists.each do |list|
-  p タイトル
-  span
-    = link_to list.title, "/lists/#{list.id}"
-  p 画像
-  = image_tag list.image, size: "200x200"
-
+.list-wrap
+  - @lists.each do |list|
+    .list-box
+      - if list.image.attached?
+        = image_tag list.image, size: "200x200"
+      - else
+        = image_tag 'no_image', size: "200x200"
+      .list-comment
+        span.list-body
+          = list.body
+        span.list-title
+          = link_to list.title, list_path(list.id)

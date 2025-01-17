@@ -1,7 +1,20 @@
-h1 編集画面
-= form_with model: @list do |f|
-  h4 タイトル
-  = f.text_field :title
-  h4 本文
-  = f. text_area :body
-  = f.submit '保存'
+.form
+  div
+    h1 Edit
+    - if @list.errors.any?
+      = @list.errors.count
+      |
+        件のエラーが発生しました
+      ul
+        - @list.errors.full_messages.each do |message|
+          li
+            = message
+    = form_with model: @list do |f|
+      h4 Title
+      = f.text_field :title
+      h4 body
+      = f. text_area :body
+      h4 Image
+      = f.file_field :image, accept: "image/*"
+      .button
+      = f.submit 'Update'
