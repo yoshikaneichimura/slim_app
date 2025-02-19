@@ -102,6 +102,10 @@ main {
   justify-content: center;
 }
 
+.form-box {
+  line-height: 30px;
+}
+
 .detail {
   display: flex;
   justify-content: center;

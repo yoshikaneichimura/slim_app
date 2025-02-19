@@ -9,12 +9,13 @@
         - @list.errors.full_messages.each do |message|
           li
             = message
-    = form_with model: @list, url: lists_path, method: :post do |f|
-      h4 Title
-      = f.text_field :title
-      h4 Body
-      = f.text_area :body
-      h4 Image
-      = f.file_field :image, accept: "image/*"
-      .button
-      = f.submit 'Create'
+    .form-box
+      = form_with model: @list, url: lists_path, method: :post do |f|
+        h4 Title
+        = f.text_field :title
+        h4 Body
+        = f.text_area :body
+        h4 Image
+        = f.file_field :image, accept: "image/*"
+        .button
+        = f.submit 'Create'
